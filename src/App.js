@@ -2,6 +2,7 @@ import React from 'react';
 import News from './component/news/News';
 import Add from './component/add/Add';
 import './App.css';
+import Fetch from './component/Fetch';
 
 class App extends React.Component {
     state = {
@@ -49,7 +50,7 @@ class App extends React.Component {
                 <h3>Новости</h3>
                 { isLoading && <p>Загружаю...</p> } 
                 { Array.isArray(news) &&  <News data={news} /> }
-               
+                <Fetch/>
             </React.Fragment>
         )
     }
