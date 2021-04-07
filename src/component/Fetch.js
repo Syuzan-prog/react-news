@@ -5,8 +5,10 @@ class Fetch extends React.Component {
     request = (metod , url, body = null) => {
          const config = {
             metod,
-            headers: {},
-            body,
+            headers: body ? {
+                'Content-Type': 'application/json'
+            } : null,
+            body: body ? JSON.stringify(body) : null
          }
         return fetch(url)
         .then( res =>{ 
